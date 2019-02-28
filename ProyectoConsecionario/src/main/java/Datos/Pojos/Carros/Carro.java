@@ -36,8 +36,9 @@ public class Carro implements Serializable {
         this.cantidad = cantidad;
         this.cantidadMinima = cantidadMinima;
     }
-    
-    
+
+    public Carro() {
+    }
     
     public String getReferencia() {
         return referencia;

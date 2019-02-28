@@ -21,13 +21,14 @@ import java.util.logging.Logger;
  */
 public class Archivos {
     
-    private ListasDatos listaDatos=new ListasDatos();
+    public ListasDatos listaDatos;
 
     public Archivos() {
-        
+       
     }
  
-    public void obtenerListasActuales() {
+    public ListasDatos obtenerListasActuales() {
+        listaDatos=new ListasDatos();
         
         try {
             ObjectInputStream entrada =  new ObjectInputStream(new FileInputStream("Listas.txt"));
@@ -37,9 +38,11 @@ public class Archivos {
         } catch (ClassNotFoundException ex2) {
             System.out.println("No encontre la clase");
         }
+        
+        return listaDatos;
     }
       
-       public void guardarRegistro() {
+       public void guardarRegistro(ListasDatos listaDatos) {
 
         try {
             ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("Listas.txt"));

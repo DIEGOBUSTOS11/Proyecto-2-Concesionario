@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Datos.Pojos.Carros.Personas;
+package Datos.Pojos.Personas;
 
 import java.io.Serializable;
 
@@ -22,6 +22,9 @@ public class Persona implements Serializable{
     private int telefono;
     private boolean estado;
     private int cuentaBancaria;
+
+    public Persona() {
+    }
 
     public Persona(String tipoDocumento, int documento, String nombreCompleto, String direccion, String ciudad, String correo, int telefono, boolean estado, int cuentaBancaria) {
         this.tipoDocumento = tipoDocumento;
