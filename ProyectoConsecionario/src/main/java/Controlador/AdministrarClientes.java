@@ -13,35 +13,25 @@ import Datos.Pojos.Personas.Cliente;
  *
  * @author alejandro
  */
-public class AdministrarClientes implements AdministradorInterface {
+public class AdministrarClientes extends AdministradorPadre{
 
     Cliente nuevoCliente;
     int documentoCliente;
-    ListasDatos listaDatos = new ListasDatos();
-    Archivos archivo = new Archivos();
-
+   
     public AdministrarClientes() {
-        cargarDatos();
+        super();
     }
 
     public AdministrarClientes(Cliente cliente) {
-        cargarDatos();
+        super();
         nuevoCliente = new Cliente();
         nuevoCliente = cliente;
 
     }
 
     public AdministrarClientes(int documento) {
-        cargarDatos();
+        super();
         documentoCliente = documento;
-    }
-
-    private void cargarDatos() {
-        listaDatos = archivo.obtenerListasActuales();
-    }
-
-    private void guardarDatos() {
-        archivo.guardarRegistro(listaDatos);
     }
 
     @Override
