@@ -5,8 +5,6 @@
  */
 package Controlador;
 
-import Archivos.Archivos;
-import Datos.Listas.ListasDatos;
 import Datos.Pojos.Personas.Cliente;
 
 /**

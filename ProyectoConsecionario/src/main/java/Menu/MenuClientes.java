@@ -5,7 +5,6 @@
  */
 package Menu;
 
-import Controlador.AdministradorInterface;
 import Datos.Pojos.Personas.Cliente;
 import java.util.Scanner;
 
