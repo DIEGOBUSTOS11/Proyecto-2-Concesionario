@@ -34,22 +34,37 @@ public class AdministrarClientes extends AdministradorPadre{
 
     @Override
     public void agregar() {
+        cargarDatos();
         listaDatos.getClientes().add(nuevoCliente);
         guardarDatos();
+        System.out.println("Cliente agregado correctamente");
     }
 
     @Override
     public void modificar() {
 
+        boolean existe=false;
+       
         for (Cliente cliente : listaDatos.getClientes()) {
 
             if (cliente.getDocumento() == nuevoCliente.getDocumento()) {
-
+                existe=true;
                 cliente.setCiudad(nuevoCliente.getCiudad());
-
+                cliente.setCorreo(nuevoCliente.getCorreo());
+                cliente.setCuentaBancaria(nuevoCliente.getCuentaBancaria());
+                cliente.setDireccion(nuevoCliente.getDireccion());
+                cliente.setDocumento(nuevoCliente.getDocumento());
+                cliente.setCiudad(nuevoCliente.getCiudad());
+                cliente.setNombreCompleto(nuevoCliente.getNombreCompleto());
+                cliente.setTipoDocumento(nuevoCliente.getTipoDocumento());
             }
         }
-        guardarDatos();
+         if(!existe){
+            System.out.println("Cliente no encontrado");
+        }else{
+            System.out.println("Cliente modificado");
+            guardarDatos();
+        }
     }
 
     @Override
@@ -61,6 +76,7 @@ public class AdministrarClientes extends AdministradorPadre{
 
             if (cliente.getDocumento() == documentoCliente) {
 
+                existe=true;
                 listaDatos.getClientes().remove(indice);
                 break;
             }
@@ -69,6 +85,7 @@ public class AdministrarClientes extends AdministradorPadre{
         if(!existe){
             System.out.println("Cliente no encontrado");
         }else{
+            System.out.println("Cliente eliminado");
             guardarDatos();
         }
         
@@ -83,9 +100,13 @@ public class AdministrarClientes extends AdministradorPadre{
             if (cliente.getDocumento() == documentoCliente) {
 
                 System.out.println("Nombre: " + cliente.getNombreCompleto());
+                System.out.println("Tipo de Documento: " + cliente.getTipoDocumento());
+                System.out.println("Documento: " + cliente.getDocumento());
                 System.out.println("Ciudad: " + cliente.getCiudad());
-                System.out.println("nombre: " + cliente.getNombreCompleto());
-                System.out.println("nombre: " + cliente.getNombreCompleto());
+                System.out.println("Correo: " + cliente.getCorreo());
+                System.out.println("Cuenta Bancaria: " + cliente.getCuentaBancaria());
+                System.out.println("Direccion: " + cliente.getDireccion());
+                
                 existe=true;
                 break;
             }
@@ -100,13 +121,18 @@ public class AdministrarClientes extends AdministradorPadre{
     @Override
     public void listar() {
         int indice = 1;
+        cargarDatos();
         for (Cliente cliente : listaDatos.getClientes()) {
 
             System.out.println("Indice: " + indice);
             System.out.println("Nombre: " + cliente.getNombreCompleto());
+            System.out.println("Tipo de Documento: " + cliente.getTipoDocumento());
+            System.out.println("Documento: " + cliente.getDocumento());
             System.out.println("Ciudad: " + cliente.getCiudad());
-            System.out.println("nombre: " + cliente.getNombreCompleto());
-            System.out.println("nombre: " + cliente.getNombreCompleto());
+            System.out.println("Correo: " + cliente.getCorreo());
+            System.out.println("Cuenta Bancaria: " + cliente.getCuentaBancaria());
+            System.out.println("Direccion: " + cliente.getDireccion());
+            
 
             indice++;
         }

@@ -12,6 +12,7 @@ package Datos.Pojos.Personas;
 public class Cliente extends Persona{
 
     public Cliente() {
+        super();
     }
  
     public Cliente(String tipoDocumento, int documento, String nombreCompleto, String direccion, String ciudad, String correo, int telefono, boolean estado, int cuentaBancaria) {

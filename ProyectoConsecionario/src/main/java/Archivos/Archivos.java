@@ -7,11 +7,10 @@ package Archivos;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import Datos.Listas.ListasDatos;
-
+import java.io.File;
 
 /**
  *
@@ -20,22 +19,41 @@ import Datos.Listas.ListasDatos;
 public class Archivos {
     
     public ListasDatos listaDatos;
+    private static final String ruta = "../ProyectoConsecionario/src/main/java/Archivos/Listas.txt";
+           
 
     public Archivos() {
-       
+       validarArchivo();
+    }
+    
+    private void validarArchivo(){
+     try {
+            
+            File file = new File(ruta);
+           
+            if (!file.exists()) {
+                file.createNewFile();
+                listaDatos=new ListasDatos();
+                guardarRegistro(listaDatos);
+               
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+     
+    
     }
  
     public ListasDatos obtenerListasActuales() {
         listaDatos=new ListasDatos();
-        
+       
         try {
-            ObjectInputStream entrada =  new ObjectInputStream(new FileInputStream("Listas.txt"));
+            ObjectInputStream entrada =  new ObjectInputStream(new FileInputStream(ruta));
             listaDatos = (ListasDatos) entrada.readObject();
-        } catch (IOException ex) {
-            System.out.println("No encontre el archivo");
-        } catch (ClassNotFoundException ex2) {
-            System.out.println("No encontre la clase");
-        }
+  
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } 
         
         return listaDatos;
     }
@@ -43,12 +61,14 @@ public class Archivos {
        public void guardarRegistro(ListasDatos listaDatos) {
 
         try {
-            ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("Listas.txt"));
+            ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ruta));
             salida.writeObject(listaDatos);
             salida.close();
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             System.out.println(ex);
+            ex.printStackTrace();
         }
     }
+       
     
 }

@@ -5,6 +5,8 @@
  */
 package com.mycompany.proyectoconsecionario;
 
+import Menu.MenuClientes;
+
 /**
  *
  * @author DiegoFernando
@@ -12,6 +14,8 @@ package com.mycompany.proyectoconsecionario;
 public class Inicio {
     
      public static void main(String[] args) {
+        MenuClientes menu= new MenuClientes();
+        menu.MenuInicialClientes();
         
     }
     
