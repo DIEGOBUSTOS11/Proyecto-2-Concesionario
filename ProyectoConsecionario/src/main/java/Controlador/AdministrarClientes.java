@@ -34,7 +34,7 @@ public class AdministrarClientes extends AdministradorPadre{
 
     @Override
     public void agregar() {
-        cargarDatos();
+       
         listaDatos.getClientes().add(nuevoCliente);
         guardarDatos();
         System.out.println("Cliente agregado correctamente");
@@ -110,7 +110,6 @@ public class AdministrarClientes extends AdministradorPadre{
                 existe=true;
                 break;
             }
-
         }
         if(!existe){
             System.out.println("Cliente no encontrado");
@@ -133,12 +132,28 @@ public class AdministrarClientes extends AdministradorPadre{
             System.out.println("Cuenta Bancaria: " + cliente.getCuentaBancaria());
             System.out.println("Direccion: " + cliente.getDireccion());
             
-
             indice++;
         }
         if(indice==1){
             System.out.println("No existen clientes registrados");
         }
+    }
+    
+     public Cliente obtener() {
+        
+        boolean existe=false;
+        for (Cliente cliente : listaDatos.getClientes()) {
+
+            if (cliente.getDocumento() == documentoCliente) {
+
+                return cliente;
+                
+            }
+        }
+        if(!existe){
+            System.out.println("Cliente no encontrado");
+        }
+        return null;
     }
 
 }

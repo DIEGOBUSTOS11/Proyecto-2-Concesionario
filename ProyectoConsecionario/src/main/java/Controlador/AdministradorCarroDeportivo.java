@@ -1,0 +1,164 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Controlador;
+
+import Datos.Pojos.Carros.CarroDeportivo;
+
+/**
+ *
+ * @author ferch
+ */
+public class AdministradorCarroDeportivo extends AdministradorPadre{
+    
+    CarroDeportivo nuevoCarroDeportivo;
+    int codigoCarroDeportivo;
+    
+    public AdministradorCarroDeportivo(){
+        super();
+    }
+    
+    public AdministradorCarroDeportivo (CarroDeportivo carroDeportivo){
+        super();
+        nuevoCarroDeportivo= new CarroDeportivo();
+        nuevoCarroDeportivo=carroDeportivo; 
+    }
+    
+     public AdministradorCarroDeportivo(int codigo ) {
+        super();
+        codigoCarroDeportivo = codigo;
+    }
+    
+    @Override
+    public void agregar() {
+       
+        listaDatos.getCarrosDeportivos().add(nuevoCarroDeportivo);
+        guardarDatos();
+        System.out.println("Carro deportivo agregado correctamente");
+    }
+
+    @Override
+    public void modificar() {
+
+        boolean existe=false;
+       
+        for (CarroDeportivo  carroDeportivo : listaDatos.getCarrosDeportivos()) {
+
+            if (carroDeportivo.getCodigoVehiculo()== nuevoCarroDeportivo.getCodigoVehiculo()) {
+                existe=true;
+                carroDeportivo.setCantidad(nuevoCarroDeportivo.getCantidad());
+                carroDeportivo.setCantidadMinima(nuevoCarroDeportivo.getCantidadMinima());
+                carroDeportivo.setCodigoVehiculo(nuevoCarroDeportivo.getCodigoVehiculo());
+                carroDeportivo.setColor(nuevoCarroDeportivo.getColor());
+                carroDeportivo.setEstado(nuevoCarroDeportivo.getEstado());
+                carroDeportivo.setMarca(nuevoCarroDeportivo.getMarca());
+                carroDeportivo.setMatricula(nuevoCarroDeportivo.getMatricula());
+                carroDeportivo.setModelo(nuevoCarroDeportivo.getModelo());
+                carroDeportivo.setPrecio(nuevoCarroDeportivo.getPrecio());
+                carroDeportivo.setReferencia(nuevoCarroDeportivo.getReferencia());
+            }
+        }
+         if(!existe){
+            System.out.println("Carro deportivo no encontrado");
+        }else{
+            System.out.println("Carro deportivo modificado");
+            guardarDatos();
+        }
+    }
+
+    @Override
+    public void eliminar() {
+        int indice = 0;
+
+        boolean existe=false;
+        for (CarroDeportivo carroDeportivo : listaDatos.getCarrosDeportivos()) {
+
+            if (carroDeportivo.getCodigoVehiculo()== codigoCarroDeportivo) {
+
+                existe=true;
+                listaDatos.getCarrosDeportivos().remove(indice);
+                break;
+            }
+            indice++;
+        }
+        if(!existe){
+            System.out.println("Carro deportivo no encontrado");
+        }else{
+            System.out.println("Carro deportivo eliminado");
+            guardarDatos();
+        }
+        
+    }
+    
+    @Override
+    public void ver() {
+        
+        boolean existe=false;
+        for (CarroDeportivo carroDeportivo : listaDatos.getCarrosDeportivos()) {
+
+            if (carroDeportivo.getCodigoVehiculo()== codigoCarroDeportivo) {
+
+                System.out.println("Cantidad: " + carroDeportivo.getCantidad());
+                System.out.println("Cantidad Minima: " + carroDeportivo.getCantidadMinima());
+                System.out.println("Codigo Vehiculo: " + carroDeportivo.getCodigoVehiculo());
+                System.out.println("Color: " + carroDeportivo.getColor());
+                System.out.println("Estado: " + carroDeportivo.getEstado());
+                System.out.println("Marca: " + carroDeportivo.getMarca());
+                System.out.println("Matricula: " + carroDeportivo.getMatricula());
+                System.out.println("Modelo: " + carroDeportivo.getModelo());
+                System.out.println("Precio: " + carroDeportivo.getPrecio());
+                System.out.println("Referencia: " + carroDeportivo.getReferencia());
+     
+                existe=true;
+                break;
+            }
+        }
+        if(!existe){
+            System.out.println("Carro deportivo no encontrado");
+        }
+
+    }
+    
+    @Override
+    public void listar() {
+        int indice = 1;
+        cargarDatos();
+        for (CarroDeportivo carroDeportivo : listaDatos.getCarrosDeportivos()) {
+
+            System.out.println("Cantidad: " + carroDeportivo.getCantidad());
+            System.out.println("Cantidad Minima: " + carroDeportivo.getCantidadMinima());
+            System.out.println("Codigo Vehiculo: " + carroDeportivo.getCodigoVehiculo());
+            System.out.println("Color: " + carroDeportivo.getColor());
+            System.out.println("Estado: " + carroDeportivo.getEstado());
+            System.out.println("Marca: " + carroDeportivo.getMarca());
+            System.out.println("Matricula: " + carroDeportivo.getMatricula());
+            System.out.println("Modelo: " + carroDeportivo.getModelo());
+            System.out.println("Precio: " + carroDeportivo.getPrecio());
+            System.out.println("Referencia: " + carroDeportivo.getReferencia());
+            
+            indice++;
+        }
+        if(indice==1){
+            System.out.println("No existen carros deportivos registrados");
+        }
+    }
+    
+     public CarroDeportivo obtener() {
+        
+        boolean existe=false;
+        for (CarroDeportivo carroDeportivo : listaDatos.getCarrosDeportivos()) {
+
+            if (carroDeportivo.getCodigoVehiculo()== codigoCarroDeportivo) {
+
+                return carroDeportivo;   
+            }
+        }
+        if(!existe){
+            System.out.println("Carro deportivo no encontrado");
+        }
+        return null;
+    }
+            
+}

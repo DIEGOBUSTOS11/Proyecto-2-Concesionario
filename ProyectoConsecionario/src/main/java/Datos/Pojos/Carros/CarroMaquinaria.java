@@ -13,6 +13,10 @@ public class CarroMaquinaria extends Carro {
     
     private String especialidad;
     private int capacidadCarga;
+    
+    public CarroMaquinaria(){
+        super();
+    }
 
     public CarroMaquinaria(String especialidad, int capacidadCarga, int codigoVehiculo, String referencia, String modelo, String marca, String matricula, int precio, boolean estado, String color, int cantidad, int cantidadMinima) {
         super(codigoVehiculo, referencia, modelo, marca, matricula, precio, estado, color, cantidad, cantidadMinima);

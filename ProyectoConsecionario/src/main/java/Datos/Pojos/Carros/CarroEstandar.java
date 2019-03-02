@@ -5,7 +5,6 @@
  */
 package Datos.Pojos.Carros;
 
-import Datos.Pojos.Carros.Carro;
 
 /**
  *
@@ -15,6 +14,10 @@ public class CarroEstandar extends Carro{
     
     private String tipoLlantas;
 
+    public CarroEstandar(){
+        super();
+    }
+    
     public CarroEstandar(String tipoLlantas, int codigoVehiculo, String referencia, String modelo, String marca, String matricula, int precio, boolean estado, String color, int cantidad, int cantidadMinima) {
         super(codigoVehiculo, referencia, modelo, marca, matricula, precio, estado, color, cantidad, cantidadMinima);
         this.tipoLlantas = tipoLlantas;

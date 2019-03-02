@@ -14,6 +14,9 @@ public class CarroPersonalizado extends Carro{
     private String modificacion;
     private String colorSecundario;
 
+    public CarroPersonalizado(){
+        super();
+    }
     public CarroPersonalizado(String modificacion, String colorSecundario, int codigoVehiculo, String referencia, String modelo, String marca, String matricula, int precio, boolean estado, String color, int cantidad, int cantidadMinima) {
         super(codigoVehiculo, referencia, modelo, marca, matricula, precio, estado, color, cantidad, cantidadMinima);
         this.modificacion = modificacion;

@@ -18,7 +18,7 @@ public abstract class AdministradorPadre implements AdministradorInterface{
     Archivos archivo = new Archivos();
 
     public AdministradorPadre() {
-        
+        cargarDatos();
     }
 
     

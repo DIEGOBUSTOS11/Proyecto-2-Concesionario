@@ -21,6 +21,10 @@ public class Venta implements Serializable{
     private int cuotas;
     private int saldo;
 
+    public Venta(){
+        super();
+    }
+    
     public Venta(int codigoVehiculo, int documentoCliente, int documentoEmpleado, String tipoPago, int precio, int cuotas, int saldo) {
         this.codigoVehiculo = codigoVehiculo;
         this.documentoCliente = documentoCliente;
