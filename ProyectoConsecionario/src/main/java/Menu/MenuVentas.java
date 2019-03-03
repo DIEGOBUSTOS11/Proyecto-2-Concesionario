@@ -12,6 +12,10 @@ import Controlador.AdministradorCarroPersonalizado;
 import Controlador.AdministradorEmpleados;
 import Controlador.AdministradorVentas;
 import Controlador.AdministrarClientes;
+import Datos.Pojos.Carros.CarroDeportivo;
+import Datos.Pojos.Carros.CarroEstandar;
+import Datos.Pojos.Carros.CarroMaquinaria;
+import Datos.Pojos.Carros.CarroPersonalizado;
 import Datos.Pojos.Ventas.Venta;
 import java.util.Scanner;
 
@@ -204,34 +208,64 @@ public class MenuVentas {
             case 1:
                 AdministradorCarroDeportivo deportivo
                         = new AdministradorCarroDeportivo(codigoVehiculo);
-                if (deportivo.obtener() == null) {
+                
+                CarroDeportivo carroDeportivo=deportivo.obtener();
+                if (carroDeportivo == null) {
                     System.out.print("\nCodigo de deportivo  no encontrado\n");
                     return false;
+                }else{
+                    if((carroDeportivo.getCantidad()-1)<carroDeportivo.getCantidadMinima()){
+                    System.out.print("\nSin vehiculos disponibles\n");
+                    return false; 
+                    }
                 }
 
                 break;
             case 2:
                 AdministradorCarroMaquinaria maquinaria
                         = new AdministradorCarroMaquinaria(codigoVehiculo);
-                if (maquinaria.obtener() == null) {
+                
+                CarroMaquinaria carroMaquina=maquinaria.obtener();
+                if ( carroMaquina== null) {
                     System.out.print("\nCodigo de maquinaria  no encontrado\n");
                     return false;
+                }
+                else{
+                    if((carroMaquina.getCantidad()-1)<carroMaquina.getCantidadMinima()){
+                    System.out.print("\nSin vehiculos disponibles\n");
+                    return false; 
+                    }
                 }
                 break;
             case 3:
                 AdministradorCarroPersonalizado personalizado
                         = new AdministradorCarroPersonalizado(codigoVehiculo);
-                if (personalizado.obtener() == null) {
+                
+                CarroPersonalizado carroPersonal=personalizado.obtener();
+                if ( carroPersonal== null) {
                     System.out.print("\nCodigo de personalizado  no encontrado\n");
                     return false;
+                }else{
+                    if((carroPersonal.getCantidad()-1)<carroPersonal.getCantidadMinima()){
+                    System.out.print("\nSin vehiculos disponibles\n");
+                    return false; 
+                    }
                 }
                 break;
             case 4:
                 AdministradorCarroEstandar estandar
                         = new AdministradorCarroEstandar(codigoVehiculo);
-                if (estandar.obtener() == null) {
+                
+                CarroEstandar carroEstandar=estandar.obtener();
+               
+                if ( carroEstandar== null) {
                     System.out.print("\nCodigo de extandar  no encontrado\n");
                     return false;
+                }else{
+                    if((carroEstandar.getCantidad()-1)<carroEstandar.getCantidadMinima()){
+                    System.out.print("\nSin vehiculos disponibles\n");
+                    return false; 
+                    }
                 }
 
                 break;
@@ -243,4 +277,5 @@ public class MenuVentas {
         }
         return true;
     }
+    
 }

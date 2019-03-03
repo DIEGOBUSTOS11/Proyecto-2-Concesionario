@@ -5,6 +5,10 @@
  */
 package Controlador;
 
+import Datos.Pojos.Carros.CarroDeportivo;
+import Datos.Pojos.Carros.CarroEstandar;
+import Datos.Pojos.Carros.CarroMaquinaria;
+import Datos.Pojos.Carros.CarroPersonalizado;
 import Datos.Pojos.Ventas.Venta;
 
 /**
@@ -32,10 +36,113 @@ public class AdministradorVentas extends AdministradorPadre {
 
     @Override
     public void agregar() {
-
+        descontarCarro();
         listaDatos.getVentas().add(nuevaVenta);
         guardarDatos();
         System.out.println("Venta agregado correctamente");
+    }
+
+    public void descontarCarro() {
+        switch (nuevaVenta.getTipoVehiculo()) {
+            case 1:
+
+                descontarDeportivo();
+
+                break;
+            case 2:
+                descontarMaquinaria();
+                break;
+            case 3:
+                descontarPersonalizado();
+                break;
+            case 4:
+                descontarEstandar();
+                break;
+
+        }
+        listaDatos.getVentas().add(nuevaVenta);
+        guardarDatos();
+        System.out.println("Venta agregado correctamente");
+    }
+
+    public void descontarDeportivo() {
+        int indice = 0;
+
+        for (CarroDeportivo carroDeportivo : listaDatos.getCarrosDeportivos()) {
+
+            if (carroDeportivo.getCodigoVehiculo() == nuevaVenta.getCodigoVehiculo()) {
+
+                int cantidadNueva = listaDatos.getCarrosDeportivos().get(indice).getCantidad() - 1;
+                listaDatos.getCarrosDeportivos().get(indice).setCantidad(cantidadNueva);
+
+                if (listaDatos.getCarrosDeportivos().get(indice).getCantidadMinima() <= cantidadNueva) {
+                    System.out.println("LIMITE DE CANTIDAD MINIMA, no podra vender mas carros de esta referencia");
+                }
+
+                break;
+            }
+            indice++;
+        }
+    }
+
+    public void descontarEstandar() {
+        int indice = 0;
+
+        for (CarroEstandar carroEstandar : listaDatos.getCarrosEstandar()) {
+
+            if (carroEstandar.getCodigoVehiculo() == nuevaVenta.getCodigoVehiculo()) {
+
+                int cantidadNueva = listaDatos.getCarrosEstandar().get(indice).getCantidad() - 1;
+                listaDatos.getCarrosEstandar().get(indice).setCantidad(cantidadNueva);
+
+                if (listaDatos.getCarrosEstandar().get(indice).getCantidadMinima() <= cantidadNueva) {
+                    System.out.println("LIMITE DE CANTIDAD MINIMA, no podra vender mas carros de esta referencia");
+                }
+
+                break;
+            }
+            indice++;
+        }
+    }
+
+    public void descontarPersonalizado() {
+        int indice = 0;
+
+        for (CarroPersonalizado carroPersonalizado : listaDatos.getCarrosPersonalizados()) {
+
+            if (carroPersonalizado.getCodigoVehiculo() == nuevaVenta.getCodigoVehiculo()) {
+
+                int cantidadNueva = listaDatos.getCarrosPersonalizados().get(indice).getCantidad() - 1;
+                listaDatos.getCarrosPersonalizados().get(indice).setCantidad(cantidadNueva);
+
+                if (listaDatos.getCarrosPersonalizados().get(indice).getCantidadMinima() <= cantidadNueva) {
+                    System.out.println("LIMITE DE CANTIDAD MINIMA, no podra vender mas carros de esta referencia");
+                }
+
+                break;
+            }
+            indice++;
+        }
+    }
+
+    public void descontarMaquinaria() {
+        int indice = 0;
+
+        for (CarroMaquinaria carroMaquinaria : listaDatos.getCarrosMaquinaria()) {
+
+            if (carroMaquinaria.getCodigoVehiculo() == nuevaVenta.getCodigoVehiculo()) {
+
+                int cantidadNueva = listaDatos.getCarrosMaquinaria().get(indice).getCantidad() - 1;
+                listaDatos.getCarrosMaquinaria().get(indice).setCantidad(cantidadNueva);
+
+                if (listaDatos.getCarrosMaquinaria().get(indice).getCantidadMinima() <= cantidadNueva) {
+                    System.out.println("LIMITE DE CANTIDAD MINIMA, no podra vender mas carros de esta referencia");
+                }
+
+                break;
+            }
+            indice++;
+        }
     }
 
     @Override
