@@ -24,7 +24,7 @@ public class MenuCarroPersonalizado {
     }
     
     
-    public void MenuInicialClientes() {
+    public void MenuInicialPersonalizado() {
 
         int opcion = 0;
         int codigo = 0;
@@ -67,7 +67,7 @@ public class MenuCarroPersonalizado {
                     break;
             }
 
-        } while (opcion != 3);
+        } while (opcion != 6);
     }
 
     public void agregarCarroPersonalizado() {

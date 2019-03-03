@@ -66,7 +66,7 @@ public class MenuClientes {
                     break;
             }
 
-        } while (opcion != 3);
+        } while (opcion != 6);
     }
 
     public void agregarCliente() {

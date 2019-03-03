@@ -66,7 +66,7 @@ public class MenuEmpleados {
                     break;
             }
 
-        } while (opcion != 3);
+        } while (opcion != 6);
     }
 
      public void agregarEmpleado() {

@@ -21,4 +21,5 @@ public interface AdministradorInterface {
     
     public void listar();
     
+   
 }

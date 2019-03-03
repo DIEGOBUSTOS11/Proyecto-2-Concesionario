@@ -24,7 +24,7 @@ public class MenuCarroDeportivo {
     }
     
     
-    public void MenuInicialClientes() {
+    public void MenuInicialDeportivo() {
 
         int opcion = 0;
         int codigo = 0;
@@ -67,7 +67,7 @@ public class MenuCarroDeportivo {
                     break;
             }
 
-        } while (opcion != 3);
+        } while (opcion != 6);
     }
 
     public void agregarCarroDeportivo() {

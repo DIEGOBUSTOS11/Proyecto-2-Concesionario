@@ -23,7 +23,7 @@ public class MenuCarroMaquinaria {
         super();
     }
     
-     public void MenuInicialClientes() {
+     public void MenuInicialMaquinaria() {
 
         int opcion = 0;
         int codigo = 0;
@@ -66,7 +66,7 @@ public class MenuCarroMaquinaria {
                     break;
             }
 
-        } while (opcion != 3);
+        } while (opcion != 6);
     }
 
     public void agregarCarroMaquinaria() {

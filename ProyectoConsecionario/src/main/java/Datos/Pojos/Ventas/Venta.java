@@ -14,6 +14,7 @@ import java.io.Serializable;
 public class Venta implements Serializable{
    
     private int codigoVehiculo;
+    private int tipoVehiculo; 
     private int documentoCliente;
     private int documentoEmpleado;
     private String tipoPago;
@@ -24,15 +25,24 @@ public class Venta implements Serializable{
     public Venta(){
         super();
     }
-    
-    public Venta(int codigoVehiculo, int documentoCliente, int documentoEmpleado, String tipoPago, int precio, int cuotas, int saldo) {
+
+    public Venta(int codigoVehiculo, int tipoVehiculo, int documentoCliente, int documentoEmpleado, String tipoPago, int precio, int cuotas, int saldo) {
         this.codigoVehiculo = codigoVehiculo;
+        this.tipoVehiculo = tipoVehiculo;
         this.documentoCliente = documentoCliente;
         this.documentoEmpleado = documentoEmpleado;
         this.tipoPago = tipoPago;
         this.precio = precio;
         this.cuotas = cuotas;
         this.saldo = saldo;
+    }
+
+    public int getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(int tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
     }
 
     public int getCodigoVehiculo() {

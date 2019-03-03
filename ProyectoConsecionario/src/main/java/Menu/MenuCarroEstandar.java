@@ -24,7 +24,7 @@ public class MenuCarroEstandar {
     }
     
     
-     public void MenuInicialClientes() {
+     public void MenuInicialEstandar() {
 
         int opcion = 0;
         int codigo = 0;
@@ -67,7 +67,7 @@ public class MenuCarroEstandar {
                     break;
             }
 
-        } while (opcion != 3);
+        } while (opcion != 6);
     }
 
     public void agregarCarroEstandar() {
