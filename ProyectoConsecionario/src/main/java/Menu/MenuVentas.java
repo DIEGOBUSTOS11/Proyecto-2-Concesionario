@@ -36,7 +36,10 @@ public class MenuVentas {
         do {
             System.out.print("\n\n\n1. AGREGAR \n2. MODIFICAR "
                     + "\n3. ELIMINAR\n4. VER"
-                    + "\n5. LISTAR\n6. SALIR\n");
+                    + "\n5. LISTAR"
+                    + "\n6. MENOR VENTA"
+                    + "\n7. MAYOR VENTA"
+                    + "\n6. SALIR\n");
             opcion = scan.nextInt();
 
             switch (opcion) {
@@ -74,6 +77,14 @@ public class MenuVentas {
                     administradorVentas.listar();
                     break;
                 case 6:
+                    administradorVentas = new AdministradorVentas();
+                    administradorVentas.topeVenta(1);//menor
+                    break;
+                case 7:
+                    administradorVentas = new AdministradorVentas();
+                    administradorVentas.topeVenta(2);//menor
+                    break;
+                case 8:
                     System.out.print("\nGRACIAS POR USAR ESTE PROGRAMA");
                     break;
                 default:
@@ -81,7 +92,7 @@ public class MenuVentas {
                     break;
             }
 
-        } while (opcion != 6);
+        } while (opcion != 8);
     }
 
     int tipo = 0;
@@ -180,9 +191,9 @@ public class MenuVentas {
 
         System.out.print("\nIngrese el tipo de vehiculo a comprar:"
                 + "\n1. Deportivo"
-                + "\n1. Maquinaria"
-                + "\n1. Personalizado"
-                + "\n1. Estandar"
+                + "\n2. Maquinaria"
+                + "\n3. Personalizado"
+                + "\n4. Estandar"
         );
 
         tipo = scan.nextInt();

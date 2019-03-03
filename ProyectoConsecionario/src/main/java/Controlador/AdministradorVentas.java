@@ -156,4 +156,50 @@ public class AdministradorVentas extends AdministradorPadre {
         return null;
     }
 
+    public void topeVenta(int tipoTope) {
+
+        int valorMenor = 0;
+        int indiceMenor = 0;
+        int indiceMayor = 0;
+
+        if (listaDatos.getVentas().size() > 0) {
+            valorMenor = listaDatos.getVentas().get(0).getPrecio();
+        }
+
+        int valorMayor = 0;
+
+        int indice = 0;
+        for (Venta venta : listaDatos.getVentas()) {
+            if (venta.getPrecio() < valorMenor) {
+                valorMenor = venta.getPrecio();
+                indiceMenor = indice;
+            }
+            if (venta.getPrecio() > valorMayor) {
+                valorMayor = venta.getPrecio();
+                indiceMayor = indice;
+            }
+            indice++;
+        }
+        if (indice == 0) {
+            System.out.println("No existen ventas registrados");
+        } else {
+            Venta ventaTope;
+            if (tipoTope == 1) {
+                ventaTope = listaDatos.getVentas().get(indiceMenor);
+            } else {
+                ventaTope = listaDatos.getVentas().get(indiceMayor);
+            }
+
+            System.out.println("Codigo vehiculo: " + ventaTope.getCodigoVehiculo());
+            System.out.println("Documento cliente: " + ventaTope.getDocumentoCliente());
+            System.out.println("Documento  empleado: " + ventaTope.getDocumentoEmpleado());
+            System.out.println("Tipo pago: " + ventaTope.getTipoPago());
+            System.out.println("Precio: " + ventaTope.getPrecio());
+            System.out.println("Cuotas: " + ventaTope.getCuotas());
+            System.out.println("Saldo: " + ventaTope.getSaldo());
+            System.out.println("Tipo vehiculo: " + ventaTope.getTipoVehiculo());
+        }
+
+    }
+
 }

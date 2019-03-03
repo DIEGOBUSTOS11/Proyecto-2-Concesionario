@@ -6,6 +6,7 @@
 package com.mycompany.proyectoconsecionario;
 
 import Menu.MenuClientes;
+import Menu.MenuInicial;
 
 /**
  *
@@ -14,8 +15,8 @@ import Menu.MenuClientes;
 public class Inicio {
     
      public static void main(String[] args) {
-        MenuClientes menu= new MenuClientes();
-        menu.MenuInicialClientes();
+         MenuInicial menu= new MenuInicial();
+        menu.MenuPrincipal();
         
     }
     
