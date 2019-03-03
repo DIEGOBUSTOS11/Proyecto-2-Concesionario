@@ -9,28 +9,50 @@ import Datos.Pojos.Personas.Empleado;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class AdministradorEmpleados extends AdministradorPadre{
     
+    /**
+     * Objeto de la clase Empleado
+     * Variable global documentoEmpleado
+     */
     Empleado nuevoEmpleado;
     int documentoEmpleado;
   
+    /**
+     * Constructor inicial 
+     * de la clase AdministradorEmpleados
+     */
     public AdministradorEmpleados(){
         super();
     }
     
+    /**
+     * Constructor con carga del objeto Empleado
+     * @param empleado nombre del objeto de la clase Empleado
+     */
     public AdministradorEmpleados(Empleado empleado){
         super();
         nuevoEmpleado= new Empleado();
         nuevoEmpleado=empleado;
     }
     
+     /**
+     * Constructor con carga de la variabale documento empleado
+     * @param documento numero del documento de empleado
+     */
     public AdministradorEmpleados(int documento){
         super();
         documentoEmpleado=documento;
     }
     
+    /**
+      * Metodo encargado de agregar
+      * Empleado marcado con @Override
+      * que esta sobreescribiendo al metodo de la clase
+      * padre AdministradorPadre
+      */
     @Override
     public void agregar() {
        
@@ -39,6 +61,12 @@ public class AdministradorEmpleados extends AdministradorPadre{
         System.out.println("Empleado agregado correctamente");
     }
 
+    /**
+     * Metodo encargado de modificar
+     * Empleado marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void modificar() {
 
@@ -66,6 +94,12 @@ public class AdministradorEmpleados extends AdministradorPadre{
         }
     }
 
+    /**
+     * Metodo encargado de eliminar
+     * Empleado marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void eliminar() {
         int indice = 0;
@@ -90,6 +124,12 @@ public class AdministradorEmpleados extends AdministradorPadre{
         
     }
     
+     /**
+     * Metodo encargado de ver
+     * Empleado marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void ver() {
         
@@ -116,6 +156,12 @@ public class AdministradorEmpleados extends AdministradorPadre{
 
     }
     
+    /**
+     * Metodo encargado de listar
+     * empleado marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void listar() {
         int indice = 1;
@@ -137,6 +183,12 @@ public class AdministradorEmpleados extends AdministradorPadre{
         }
     }
     
+    /**
+     * Metodo encargado obtener la 
+     * lista de Empelado
+     * @return retorna el objeto 
+     * de la clase Empleado
+     */
      public Empleado obtener() {
         
         boolean existe=false;

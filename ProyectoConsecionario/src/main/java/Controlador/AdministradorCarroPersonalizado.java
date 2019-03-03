@@ -9,28 +9,50 @@ import Datos.Pojos.Carros.CarroPersonalizado;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class AdministradorCarroPersonalizado extends AdministradorPadre{
    
+     /**
+     * Objeto de la clase carro estandar
+     * Variable global codigoCarroPersonalizado
+     */
     CarroPersonalizado nuevoCarroPersonalizado;
     int codigoCarroPerzonalizado;
     
+    /**
+     * Constructor inicial 
+     * de la clase AdministradorCarroPersonalizado
+     */
     public AdministradorCarroPersonalizado(){
         super();
     }
     
+    /**
+     * Constructor con carga del objeto CarroPersonalizado
+     * @param carroPersonalizado nombre del objeto de la clase CarroPersonalizado
+     */
     public AdministradorCarroPersonalizado(CarroPersonalizado carroPersonalizado){
         super();
         nuevoCarroPersonalizado= new CarroPersonalizado();
         nuevoCarroPersonalizado= carroPersonalizado;
     }
     
+    /**
+     * Constructor con carga de la variabale codigo vehiculo
+     * @param codigo numero del codigo de vehiculo
+     */
     public AdministradorCarroPersonalizado(int codigo){
         super();
         codigoCarroPerzonalizado=codigo;
     }
     
+    /**
+      * Metodo encargado de agregar
+      * carro personalizado marcado con @Override
+      * que esta sobreescribiendo al metodo de la clase
+      * padre AdministradorPadre
+      */
     @Override
     public void agregar() {
        
@@ -39,6 +61,12 @@ public class AdministradorCarroPersonalizado extends AdministradorPadre{
         System.out.println("Carro perzonalizado agregado correctamente");
     }
 
+    /**
+     * Metodo encargado de modificar
+     * carro personalizado marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void modificar() {
 
@@ -68,6 +96,12 @@ public class AdministradorCarroPersonalizado extends AdministradorPadre{
         }
     }
 
+    /**
+     * Metodo encargado de eliminar
+     * carro personalizado marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void eliminar() {
         int indice = 0;
@@ -91,7 +125,12 @@ public class AdministradorCarroPersonalizado extends AdministradorPadre{
         }
         
     }
-    
+    /**
+     * Metodo encargado de ver
+     * carro personalizado marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void ver() {
         
@@ -121,6 +160,12 @@ public class AdministradorCarroPersonalizado extends AdministradorPadre{
 
     }
     
+    /**
+     * Metodo encargado de listar
+     * carro personalizado marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void listar() {
         int indice = 1;
@@ -146,6 +191,12 @@ public class AdministradorCarroPersonalizado extends AdministradorPadre{
         }
     }
     
+    /**
+     * Metodo encargado obtener la 
+     * lista de carros Personalizado
+     * @return retorna el objeto 
+     * de la clase CarroPersonalizado
+     */
      public CarroPersonalizado obtener() {
         
         boolean existe=false;

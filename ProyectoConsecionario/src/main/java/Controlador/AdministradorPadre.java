@@ -10,22 +10,37 @@ import Datos.Listas.ListasDatos;
 
 /**
  *
- * @author alejandro
+ * @author alejandro y diego
  */
 public abstract class AdministradorPadre implements AdministradorInterface{
     
+     /**
+     * Objeto de la clase ListasDatos
+     * Objeto de la calse Archivos
+     */
     ListasDatos listaDatos = new ListasDatos();
     Archivos archivo = new Archivos();
 
+    /**
+     * Constructor inicial 
+     * de la clase AdministradorPadre
+     */
     public AdministradorPadre() {
         cargarDatos();
     }
 
-    
+    /**
+      * Metodo encargado 
+      * cargaDatos 
+      */
     protected void cargarDatos() {
         listaDatos = archivo.obtenerListasActuales();
     }
 
+     /**
+      * Metodo encargado 
+      * guardarDatos
+      */
     protected void guardarDatos() {
         archivo.guardarRegistro(listaDatos);
     }

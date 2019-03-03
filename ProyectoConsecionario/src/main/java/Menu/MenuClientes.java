@@ -11,18 +11,31 @@ import java.util.Scanner;
 
 /**
  *
- * @author alejandro
+ * @author alejandro y diego
  */
 public class MenuClientes {
 
+    /**
+     * Objeto de la clase Cliente
+     * objeto de la clase AdministradorClientes
+     */
     Cliente nuevoCliente;
     AdministrarClientes administrarCliente;
     Scanner scan = new Scanner(System.in);
 
+    /**
+     * Constructor inicial 
+     * de la clase MenuClientes
+     */
     public MenuClientes() {
         super();
     }
 
+    /**
+     * Metodo menuInicialClientes encargado
+     * de agregar, modificar, eliminar,ver,
+     * listar un  clientes
+     */
     public void MenuInicialClientes() {
 
         int opcion = 0;
@@ -69,6 +82,10 @@ public class MenuClientes {
         } while (opcion != 6);
     }
 
+    /**
+     * Metodo agregarCliente encargado
+     * de agregar un cliente nuevo
+     */
     public void agregarCliente() {
         nuevoCliente = new Cliente();
 
@@ -89,6 +106,10 @@ public class MenuClientes {
 
     }
 
+    /**
+     * Metodo modificarCliente encargado
+     * de modificar un cliente
+     */
     public void modificarCliente() {
         System.out.print("\nIngrese el documento del cliente a modificar:\n");
         int documento = scan.nextInt();

@@ -21,18 +21,32 @@ import java.util.Scanner;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class MenuVentas {
-
+    
+    /**
+     * Objeto de la clase Venta
+     * objeto de la clase AdministradorVentas
+     */
     Venta nuevaVenta;
     AdministradorVentas administradorVentas;
     Scanner scan = new Scanner(System.in);
 
+     /**
+     * Constructor inicial 
+     * de la clase MenuEmpleados
+     */
     public MenuVentas() {
         super();
     }
 
+    /**
+     * Metodo menuInicialVentas encargado
+     * de agregar, modificar, eliminar,ver,
+     * listar, menor venta, mayor venta,
+     * de la ventas realizada por un cliente
+     */
     public void MenuInicialVentas() {
 
         int opcion = 0;
@@ -99,11 +113,16 @@ public class MenuVentas {
         } while (opcion != 8);
     }
 
+    
     int tipo = 0;
     int codigoVehiculo = 0;
     int documentoEmpleado = 0;
     int documentoCliente = 0;
-
+    
+    /**
+     * Metodo agregarVenta encargado
+     * de agregar un venta nueva
+     */
     public boolean agregarVenta() {
 
         nuevaVenta = new Venta();
@@ -131,6 +150,10 @@ public class MenuVentas {
 
     }
 
+     /**
+     * Metodo modificarVenta encargado
+     * de modificar una venta realizada
+     */
     public boolean modificarVenta() {
 
         nuevaVenta = new Venta();
@@ -162,7 +185,11 @@ public class MenuVentas {
         }
 
     }
-
+    
+     /**
+     * Metodo modEmpleado encargado
+     * de modificar un empleado
+     */
     public boolean validarCliente() {
         System.out.print("\nIngrese el documento del cliente:\n");
         documentoCliente = scan.nextInt();
@@ -177,6 +204,10 @@ public class MenuVentas {
 
     }
 
+     /**
+     * Metodo validarEmpleado encargado
+     * de validar el documento del empleado
+     */
     public boolean validarEmpleado() {
         System.out.print("\nIngrese el documento del empleado:\n");
         documentoEmpleado = scan.nextInt();
@@ -191,6 +222,13 @@ public class MenuVentas {
 
     }
 
+     /**
+     * Metodo validarVehiculo encargado
+     * de escoger el tipo de vehiculo 
+     * que existe para realizar la compra
+     * y validar si existe o no un vehiculo
+     * con el codigo del vehculo
+     */
     public boolean validarVehiculo() {
 
         System.out.print("\nIngrese el tipo de vehiculo a comprar:"

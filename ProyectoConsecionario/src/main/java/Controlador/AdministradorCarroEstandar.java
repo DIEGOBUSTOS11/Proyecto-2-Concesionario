@@ -9,29 +9,50 @@ import Datos.Pojos.Carros.CarroEstandar;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class AdministradorCarroEstandar extends AdministradorPadre{
     
+    /**
+     * Objeto de la clase carro estandar
+     * Variable global codigoCarroEstandar
+     */
     CarroEstandar nuevoCarroEstandar;
     int codigoCarroEstandar;
     
+    /**
+     * Constructor inicial 
+     * de la clase AdministradorCarroEstandar
+     */
     public AdministradorCarroEstandar(){
         super();
     }
     
+    /**
+     * Constructor con carga del objeto CarroEstandar
+     * @param carroEstandar nombre del objeto de la clase CarroEstandar
+     */
     public AdministradorCarroEstandar(CarroEstandar carroEstandar){
         super();
         nuevoCarroEstandar= new CarroEstandar();
         nuevoCarroEstandar=carroEstandar;
     }
     
+    /**
+     * Constructor con carga de la variabale codigo vehiculo
+     * @param codigo numero del codigo de vehiculo
+     */
     public AdministradorCarroEstandar(int codigo){
         super();
-        codigoCarroEstandar=codigo;
-        
+        codigoCarroEstandar=codigo;   
     }
     
+    /**
+      * Metodo encargado de agregar
+      * carro estandar marcado con @Override
+      * que esta sobreescribiendo al metodo de la clase
+      * padre AdministradorPadre
+      */
     @Override
     public void agregar() {
        
@@ -40,6 +61,12 @@ public class AdministradorCarroEstandar extends AdministradorPadre{
         System.out.println("Carro estandar agregado correctamente");
     }
 
+     /**
+     * Metodo encargado de modificar
+     * carro estandar marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void modificar() {
 
@@ -68,7 +95,13 @@ public class AdministradorCarroEstandar extends AdministradorPadre{
             guardarDatos();
         }
     }
-
+    
+     /**
+     * Metodo encargado de eliminar
+     * carro estandar marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void eliminar() {
         int indice = 0;
@@ -93,6 +126,12 @@ public class AdministradorCarroEstandar extends AdministradorPadre{
         
     }
     
+    /**
+     * Metodo encargado de ver
+     * carro estandar marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void ver() {
         
@@ -122,6 +161,12 @@ public class AdministradorCarroEstandar extends AdministradorPadre{
 
     }
     
+    /**
+     * Metodo encargado de listar
+     * carro estandar marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void listar() {
         int indice = 1;
@@ -146,6 +191,12 @@ public class AdministradorCarroEstandar extends AdministradorPadre{
         }
     }
     
+    /**
+     * Metodo encargado obtener la 
+     * lista de carros estandar
+     * @return retorna el objeto 
+     * de la clase CarroEstandar
+     */
      public CarroEstandar obtener() {
         
         boolean existe=false;

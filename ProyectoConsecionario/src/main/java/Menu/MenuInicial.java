@@ -9,10 +9,15 @@ import java.util.Scanner;
 
 /**
  *
- * @author alejandro
+ * @author alejandro y diego
  */
 public class MenuInicial {
 
+    /**
+     * Metodo menuPrincipal encargado
+     * de llamar a los diferentes menus del
+     * programa 
+     */
     public void MenuPrincipal() {
 
         int opcion = 0;

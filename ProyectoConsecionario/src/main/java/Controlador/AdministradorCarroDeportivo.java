@@ -9,28 +9,49 @@ import Datos.Pojos.Carros.CarroDeportivo;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class AdministradorCarroDeportivo extends AdministradorPadre{
-    
+    /**
+     * Objeto de la clase carro deportivo
+     * Variable global codigoCarroDeportivo
+     */
     CarroDeportivo nuevoCarroDeportivo;
     int codigoCarroDeportivo;
     
+    /**
+     * Constructor inicial 
+     * de la clase AdministradorCarroDeportivo
+     */
     public AdministradorCarroDeportivo(){
         super();
     }
     
+    /**
+     * Constructor con carga del objeto CarroDeportivo
+     * @param carroDeportivo nombre del objeto de la clase CarroDeportivo
+     */
     public AdministradorCarroDeportivo (CarroDeportivo carroDeportivo){
         super();
         nuevoCarroDeportivo= new CarroDeportivo();
         nuevoCarroDeportivo=carroDeportivo; 
     }
-    
+  
+    /**
+     * Constructor con carga de la variabale codigo vehiculo
+     * @param codigo numero del codigo de vehiculo
+     */
      public AdministradorCarroDeportivo(int codigo ) {
         super();
         codigoCarroDeportivo = codigo;
     }
     
+     /**
+      * Metodo encargado de agregar
+      * carro deportivo marcado con @Override
+      * que esta sobreescribiendo al metodo de la clase
+      * padre AdministradorPadre
+      */
     @Override
     public void agregar() {
        
@@ -38,7 +59,13 @@ public class AdministradorCarroDeportivo extends AdministradorPadre{
         guardarDatos();
         System.out.println("Carro deportivo agregado correctamente");
     }
-
+    
+    /**
+     * Metodo encargado de modificar
+     * carro deportivo marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void modificar() {
 
@@ -67,7 +94,13 @@ public class AdministradorCarroDeportivo extends AdministradorPadre{
             guardarDatos();
         }
     }
-
+    
+    /**
+     * Metodo encargado de eliminar
+     * carro deportivo marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void eliminar() {
         int indice = 0;
@@ -92,6 +125,12 @@ public class AdministradorCarroDeportivo extends AdministradorPadre{
         
     }
     
+    /**
+     * Metodo encargado de ver
+     * carro deportivo marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void ver() {
         
@@ -121,6 +160,12 @@ public class AdministradorCarroDeportivo extends AdministradorPadre{
 
     }
     
+    /**
+     * Metodo encargado de listar
+     * carro deportivo marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void listar() {
         int indice = 1;
@@ -145,6 +190,12 @@ public class AdministradorCarroDeportivo extends AdministradorPadre{
         }
     }
     
+    /**
+     * Metodo encargado obtener la 
+     * lista de carros deportivos
+     * @return retorna el objeto 
+     * de la clase CarroDeportivo
+     */
      public CarroDeportivo obtener() {
         
         boolean existe=false;

@@ -13,27 +13,49 @@ import Datos.Pojos.Ventas.Venta;
 
 /**
  *
- * @author ferch
+ * @author Alejndro y Diego
  */
 public class AdministradorVentas extends AdministradorPadre {
-
+   
+    /**
+     * Objeto de la clase Venta
+     * Variable global documentoVenta
+     */
     Venta nuevaVenta;
     int documentoVenta;
 
+    /**
+     * Constructor inicial 
+     * de la clase AdministradorVentas
+     */
     public AdministradorVentas() {
         super();
     }
 
+    /**
+     * Constructor con carga del objeto Venta
+     * @param venta nombre del objeto de la clase Venta
+     */
     public AdministradorVentas(Venta venta) {
         super();
         nuevaVenta = new Venta();
         nuevaVenta = venta;
     }
 
+    /**
+     * Constructor con carga de la variabale documento cliente
+     * @param documento numero del documento de cliente
+     */
     public AdministradorVentas(int documento) {
         documentoVenta = documento;
     }
 
+    /**
+      * Metodo encargado de agregar
+      * Venta marcado con @Override
+      * que esta sobreescribiendo al metodo de la clase
+      * padre AdministradorPadre
+      */
     @Override
     public void agregar() {
         descontarCarro();
@@ -42,6 +64,11 @@ public class AdministradorVentas extends AdministradorPadre {
         System.out.println("Venta agregado correctamente");
     }
 
+    /**
+      * Metodo encargado de 
+      * descontar los carros 
+      * vendidos del inventario
+      */
     public void descontarCarro() {
         switch (nuevaVenta.getTipoVehiculo()) {
             case 1:
@@ -65,6 +92,11 @@ public class AdministradorVentas extends AdministradorPadre {
         System.out.println("Venta agregado correctamente");
     }
 
+    /**
+      * Metodo encargado de 
+      * descontar los carros deportivo
+      * vendidos del inventario
+      */
     public void descontarDeportivo() {
         int indice = 0;
 
@@ -85,6 +117,11 @@ public class AdministradorVentas extends AdministradorPadre {
         }
     }
 
+    /**
+      * Metodo encargado de 
+      * descontar los carros estandar
+      * vendidos del inventario
+      */
     public void descontarEstandar() {
         int indice = 0;
 
@@ -105,6 +142,11 @@ public class AdministradorVentas extends AdministradorPadre {
         }
     }
 
+    /**
+      * Metodo encargado de 
+      * descontar los carros personalizado
+      * vendidos del inventario
+      */
     public void descontarPersonalizado() {
         int indice = 0;
 
@@ -125,6 +167,11 @@ public class AdministradorVentas extends AdministradorPadre {
         }
     }
 
+    /**
+      * Metodo encargado de 
+      * descontar los carro maquinaria
+      * vendidos del inventario
+      */
     public void descontarMaquinaria() {
         int indice = 0;
 
@@ -145,6 +192,12 @@ public class AdministradorVentas extends AdministradorPadre {
         }
     }
 
+    /**
+     * Metodo encargado de modificar
+     * venta marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void modificar() {
 
@@ -173,6 +226,12 @@ public class AdministradorVentas extends AdministradorPadre {
 
     }
 
+     /**
+     * Metodo encargado de eliminar
+     * venta marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void eliminar() {
         int indice = 0;
@@ -197,6 +256,12 @@ public class AdministradorVentas extends AdministradorPadre {
 
     }
 
+    /**
+     * Metodo encargado de ver
+     * ventas marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void ver() {
         boolean existe = false;
@@ -223,6 +288,12 @@ public class AdministradorVentas extends AdministradorPadre {
 
     }
 
+    /**
+     * Metodo encargado de listar
+     * ventas marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void listar() {
         int indice = 1;
@@ -245,7 +316,13 @@ public class AdministradorVentas extends AdministradorPadre {
         }
 
     }
-
+    
+    /**
+     * Metodo encargado obtener la 
+     * lista de Ventas
+     * @return retorna el objeto 
+     * de la clase Venta
+     */
     public Venta obtener() {
 
         boolean existe = false;
@@ -263,6 +340,12 @@ public class AdministradorVentas extends AdministradorPadre {
         return null;
     }
 
+    /**
+     * Metodo encargado de
+     * calcular el carro mas caro
+     * vendido y el carro mas barato
+     * vendio
+     */
     public void topeVenta(int tipoTope) {
 
         int valorMenor = 0;

@@ -14,18 +14,29 @@ import java.io.File;
 
 /**
  *
- * @author alejandro
+ * @author alejandro y diego
  */
 public class Archivos {
-    
+    /**
+     * String que contiene la ruta donde se creara el archivo
+     */
+    /**
+     * Objeto del tipo listasdatos
+     */
     public ListasDatos listaDatos;
     private static final String ruta = "../ProyectoConsecionario/src/main/java/Archivos/Listas.txt";
            
-
+    /**
+     * Constructor inicial de la clase archivos
+     */
     public Archivos() {
        validarArchivo();
     }
     
+    /**
+     * Metodo que valida si existe el archivo 
+     * o si no existe lo crea
+     */
     private void validarArchivo(){
      try {
             
@@ -44,6 +55,10 @@ public class Archivos {
     
     }
  
+    /**
+     * Metodo encargado de obtener la lista de datos del archivo
+     * @return Listadatos 
+     */
     public ListasDatos obtenerListasActuales() {
         listaDatos=new ListasDatos();
        
@@ -58,8 +73,13 @@ public class Archivos {
         return listaDatos;
     }
       
+    /**
+     * Metodo encargado guardar el registro del archivo creado
+     * @param listaDatos escribe la lista de datos que contiene el archivo
+     */
+    
        public void guardarRegistro(ListasDatos listaDatos) {
-
+           
         try {
             ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ruta));
             salida.writeObject(listaDatos);

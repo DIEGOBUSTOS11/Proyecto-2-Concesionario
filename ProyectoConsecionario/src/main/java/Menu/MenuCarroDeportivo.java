@@ -11,19 +11,31 @@ import java.util.Scanner;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class MenuCarroDeportivo {
   
+    /**
+     * Objeto de la clase carro deportivo
+     * objeto de la clase AdministradorCarroDeportivo
+     */
     CarroDeportivo nuevoCarroDeportivo;
     AdministradorCarroDeportivo administradorCarrosDeportivo;
     Scanner scan = new Scanner(System.in);
     
+    /**
+     * Constructor inicial 
+     * de la clase MenuCarroDeportivo
+     */
     public MenuCarroDeportivo(){
         super();
     }
     
-    
+    /**
+     * Metodo menuInicialDeportivo encargado
+     * de agregar, modificar, eliminar,ver,
+     * listar un carro deportivo
+     */
     public void MenuInicialDeportivo() {
 
         int opcion = 0;
@@ -70,6 +82,10 @@ public class MenuCarroDeportivo {
         } while (opcion != 6);
     }
 
+    /**
+     * Metodo agregarCarroDeportivo encargado
+     * de agregar un carro deportivo
+     */
     public void agregarCarroDeportivo() {
         nuevoCarroDeportivo = new CarroDeportivo();
         
@@ -95,7 +111,11 @@ public class MenuCarroDeportivo {
         nuevoCarroDeportivo.setReferencia(scan.next());
 
     }
-
+    
+    /**
+     * Metodo modificarCarroDeportivo encargado
+     * de modificar un carro deportivo
+     */
     public void modificarCarroDeportivo() {
         System.out.print("\nIngrese el documento del carro deportivo a modificar:\n");
         int codigo= scan.nextInt();

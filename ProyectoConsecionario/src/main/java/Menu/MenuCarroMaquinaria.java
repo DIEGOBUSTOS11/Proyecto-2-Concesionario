@@ -11,18 +11,31 @@ import java.util.Scanner;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class MenuCarroMaquinaria {
     
+    /**
+     * Objeto de la clase carro maquinaria
+     * objeto de la clase AdministradorCarroMaquinaria
+     */
     CarroMaquinaria nuevoCarroMaquinaria;
     AdministradorCarroMaquinaria administradorCarroMaquinaria;
     Scanner scan = new Scanner(System.in);
     
+    /**
+     * Constructor inicial 
+     * de la clase MenuCarroMaquinaria
+     */
     public MenuCarroMaquinaria(){
         super();
     }
     
+    /**
+     * Metodo menuInicialMaquinaria encargado
+     * de agregar, modificar, eliminar,ver,
+     * listar un carro Maquinaria
+     */
      public void MenuInicialMaquinaria() {
 
         int opcion = 0;
@@ -69,6 +82,10 @@ public class MenuCarroMaquinaria {
         } while (opcion != 6);
     }
 
+     /**
+     * Metodo agregarCarroMaquinaria encargado
+     * de agregar un carro maquinaria
+     */
     public void agregarCarroMaquinaria() {
         nuevoCarroMaquinaria = new CarroMaquinaria();
 
@@ -95,6 +112,10 @@ public class MenuCarroMaquinaria {
 
     }
 
+     /**
+     * Metodo modificarCarroEstandar encargado
+     * de modificar un carro maquinaria
+     */
     public void modificarCarroMaquinaria() {
         System.out.print("\nIngrese el documento del carro estandar  a modificar:\n");
         int codigo = scan.nextInt();

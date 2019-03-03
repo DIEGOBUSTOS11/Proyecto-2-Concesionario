@@ -11,19 +11,31 @@ import java.util.Scanner;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class MenuCarroEstandar {
     
+    /**
+     * Objeto de la clase carro estandar
+     * objeto de la clase AdministradorCarroEstandar
+     */
     CarroEstandar nuevoCarroEstadar;
     AdministradorCarroEstandar administradorCarrosEstandar;
     Scanner scan = new Scanner(System.in);
     
+    /**
+     * Constructor inicial 
+     * de la clase MenuCarroEstandar
+     */
     public MenuCarroEstandar(){
         super();
     }
     
-    
+    /**
+     * Metodo menuInicialEstandar encargado
+     * de agregar, modificar, eliminar,ver,
+     * listar un carro estandar
+     */
      public void MenuInicialEstandar() {
 
         int opcion = 0;
@@ -70,6 +82,10 @@ public class MenuCarroEstandar {
         } while (opcion != 6);
     }
 
+     /**
+     * Metodo agregarCarroEstandar encargado
+     * de agregar un carro estandar
+     */
     public void agregarCarroEstandar() {
         nuevoCarroEstadar = new CarroEstandar();
        
@@ -96,6 +112,10 @@ public class MenuCarroEstandar {
 
     }
 
+    /**
+     * Metodo modificarCarroEstandar encargado
+     * de modificar un carro estandar
+     */
     public void modificarCarroEstandar() {
         System.out.print("\nIngrese el documento del carro estandar  a modificar:\n");
         int codigo= scan.nextInt();

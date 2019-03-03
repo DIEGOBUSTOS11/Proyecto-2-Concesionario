@@ -7,14 +7,31 @@ package Datos.Pojos.Personas;
 
 /**
  *
- * @author alejandro
+ * @author alejandro y diego
  */
 public class Cliente extends Persona{
 
+    /**
+     * Constructor inicial 
+     * de la clase Cliente
+     */
     public Cliente() {
         super();
     }
  
+    /**
+     * Constructor con los atributos
+     * de la clase de Cliente
+     * @param tipoDocumento
+     * @param documento
+     * @param nombreCompleto
+     * @param direccion
+     * @param ciudad
+     * @param correo
+     * @param telefono
+     * @param estado
+     * @param cuentaBancaria 
+     */
     public Cliente(String tipoDocumento, int documento, String nombreCompleto, String direccion, String ciudad, String correo, int telefono, boolean estado, int cuentaBancaria) {
         super(tipoDocumento, documento, nombreCompleto, direccion, ciudad, correo, telefono, estado, cuentaBancaria);
     }

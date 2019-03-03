@@ -11,18 +11,31 @@ import java.util.Scanner;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class MenuEmpleados {
     
+    /**
+     * Objeto de la clase Empleado
+     * objeto de la clase AdministradorEmpleados
+     */
     Empleado nuevoEmpleado;
     AdministradorEmpleados administradorEmpleados;
     Scanner scan = new Scanner(System.in);
     
+     /**
+     * Constructor inicial 
+     * de la clase MenuEmpleados
+     */
     public MenuEmpleados(){
         super();
     }
     
+    /**
+     * Metodo menuInicialEmpleados encargado
+     * de agregar, modificar, eliminar,ver,
+     * listar un  Empleados
+     */
     public void MenuInicialClientes() {
 
         int opcion = 0;
@@ -69,6 +82,10 @@ public class MenuEmpleados {
         } while (opcion != 6);
     }
 
+    /**
+     * Metodo agregarEmpleado encargado
+     * de agregar un empleado nuevo
+     */
      public void agregarEmpleado() {
         nuevoEmpleado = new Empleado();
 
@@ -89,6 +106,10 @@ public class MenuEmpleados {
 
     }
 
+     /**
+     * Metodo modificarEmpleado encargado
+     * de modificar un empleado
+     */
     public void modificarEmpleado() {
         System.out.print("\nIngrese el documento del cliente a modificar:\n");
         int documento = scan.nextInt();

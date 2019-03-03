@@ -9,17 +9,28 @@ import Datos.Pojos.Personas.Cliente;
 
 /**
  *
- * @author alejandro
+ * @author alejandro y diego
  */
 public class AdministrarClientes extends AdministradorPadre{
 
+    /**
+     * Objeto de la clase Clientes
+     * Variable global documentoCliente
+     */
     Cliente nuevoCliente;
     int documentoCliente;
    
+    /**
+     * Constructor inicial 
+     * de la clase AdministradorClientes
+     */
     public AdministrarClientes() {
         super();
     }
-
+     /**
+     * Constructor con carga del objeto Cliente
+     * @param cliente nombre del objeto de la clase Cliente
+     */
     public AdministrarClientes(Cliente cliente) {
         super();
         nuevoCliente = new Cliente();
@@ -27,11 +38,21 @@ public class AdministrarClientes extends AdministradorPadre{
 
     }
 
+     /**
+     * Constructor con carga de la variabale documento Cliente
+     * @param cliente numero del documento de cliente
+     */
     public AdministrarClientes(int documento) {
         super();
         documentoCliente = documento;
     }
-
+    
+    /**
+      * Metodo encargado de agregar
+      * Clientes marcado con @Override
+      * que esta sobreescribiendo al metodo de la clase
+      * padre AdministradorPadre
+      */
     @Override
     public void agregar() {
        
@@ -40,6 +61,12 @@ public class AdministrarClientes extends AdministradorPadre{
         System.out.println("Cliente agregado correctamente");
     }
 
+    /**
+     * Metodo encargado de modificar
+     * clientes marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void modificar() {
 
@@ -67,6 +94,12 @@ public class AdministrarClientes extends AdministradorPadre{
         }
     }
 
+    /**
+     * Metodo encargado de eliminar
+     * Clientes marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void eliminar() {
         int indice = 0;
@@ -91,6 +124,12 @@ public class AdministrarClientes extends AdministradorPadre{
         
     }
     
+    /**
+     * Metodo encargado de ver
+     * Clientes marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void ver() {
         
@@ -117,6 +156,12 @@ public class AdministrarClientes extends AdministradorPadre{
 
     }
     
+    /**
+     * Metodo encargado de listar
+     * clientes marcado con @Override
+     * que esta sobreescribiendo al metodo de la clase
+     * padre AdministradorPadre
+     */
     @Override
     public void listar() {
         int indice = 1;
@@ -139,6 +184,12 @@ public class AdministrarClientes extends AdministradorPadre{
         }
     }
     
+    /**
+     * Metodo encargado obtener la 
+     * lista de Cliente
+     * @return retorna el objeto 
+     * de la clase cliente
+     */
      public Cliente obtener() {
         
         boolean existe=false;

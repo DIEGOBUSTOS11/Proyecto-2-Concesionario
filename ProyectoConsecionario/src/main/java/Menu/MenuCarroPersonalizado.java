@@ -11,19 +11,31 @@ import java.util.Scanner;
 
 /**
  *
- * @author ferch
+ * @author diego y alejandro
  */
 public class MenuCarroPersonalizado {
     
+    /**
+     * Objeto de la clase carro personalizado
+     * objeto de la clase AdministradorCarroPersonalizado
+     */
     CarroPersonalizado nuevoCarroPersonalizado;
     AdministradorCarroPersonalizado administradorCarroPersonalizado;
     Scanner scan = new Scanner(System.in);
     
+    /**
+     * Constructor inicial 
+     * de la clase MenuCarroPersonalizado
+     */
     public MenuCarroPersonalizado(){
        super();
     }
     
-    
+    /**
+     * Metodo menuInicialPersonalizado encargado
+     * de agregar, modificar, eliminar,ver,
+     * listar un carro personalizado
+     */
     public void MenuInicialPersonalizado() {
 
         int opcion = 0;
@@ -70,6 +82,10 @@ public class MenuCarroPersonalizado {
         } while (opcion != 6);
     }
 
+    /**
+     * Metodo agregarCarroPersonalizado encargado
+     * de agregar un carro personalizado
+     */
     public void agregarCarroPersonalizado() {
         nuevoCarroPersonalizado = new CarroPersonalizado();
        
@@ -96,6 +112,10 @@ public class MenuCarroPersonalizado {
 
     }
 
+    /**
+     * Metodo modificarCarroPersonalizado encargado
+     * de modificar un carro personalizado
+     */
     public void modificarCarroPersonalizado() {
         System.out.print("\nIngrese el documento del carro personalizado  a modificar:\n");
         int codigo= scan.nextInt();
